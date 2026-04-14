@@ -224,13 +224,18 @@ if (contactForm) {
     submitBtn.disabled = true;
     submitBtn.style.opacity = '0.7';
 
-    const data = new FormData(contactForm);
+    const formData = new FormData(contactForm);
+    const data = {};
+    formData.forEach((value, key) => { data[key] = value; });
 
     try {
       const response = await fetch(contactForm.action, {
         method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
+        body: JSON.stringify(data),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
       });
 
       if (response.ok) {
