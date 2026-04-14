@@ -458,26 +458,27 @@
           </div>
         </div>
         <div class="contact-right reveal">
-          <form class="contact-form" id="contactForm" action="https://formspree.io/f/myklzbbp" method="POST">
+          <form class="contact-form" action="https://formspree.io/f/myklzbbp" method="POST">
             <div class="form-row">
               <div class="form-group">
                 <label>Nom complet</label>
-                <input type="text" placeholder="Votre nom" required />
+                <input type="text" name="name" placeholder="Votre nom" required />
               </div>
               <div class="form-group">
                 <label>Email</label>
-                <input type="email" placeholder="votre@email.com" required />
+                <input type="email" name="email" placeholder="votre@email.com" required />
               </div>
             </div>
             <div class="form-group">
               <label>Sujet</label>
-              <input type="text" placeholder="Objet de votre message" required />
+              <input type="text" name="_subject" placeholder="Objet de votre message" required />
             </div>
             <div class="form-group">
               <label>Message</label>
-              <textarea placeholder="Décrivez votre projet ou votre demande..." required></textarea>
+              <textarea name="message" placeholder="Décrivez votre projet ou votre demande..." required></textarea>
             </div>
-            <button type="submit" class="btn-primary full-width" id="submitBtn">
+            <input type="hidden" name="_next" value="https://asb-hub.github.io" />
+            <button type="submit" class="btn-primary full-width">
               <span>Envoyer le message</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
